@@ -17,23 +17,25 @@ function App() {
         navigate(`/posts/${id}`)
     }
     const gotoEdit = (id: number) => {
-        navigate(`/edit/${id}`)
+        navigate(`/posts/${id}/edit`)
     }
     const postDidDelete = (id: number) => {
         navigate("/posts")
     }
-
     const postDidEdit = (id: number) => {
         navigate(`/posts/${id}`)
+    }
+    const gotoPosts = () => {
+        navigate("/posts");
     }
 
     return (
       <Routes>
           <Route path="/" element={(<Navigate to="/posts"></Navigate>)}></Route>
-          <Route path="/posts" element={(<Posts gotoNewPost={gotoNewPost} gotoPost={gotoPost}></Posts>)}></Route>
-          <Route path="/new" element={(<AddPost postDidSave={postDidSave}></AddPost>)}></Route>
-          <Route path="/posts/:id" element={(<Post postDidDelete={postDidDelete} gotoEdit={gotoEdit}></Post>)}></Route>
-          <Route path="/edit/:id" element={(<EditPost postDidEdit={postDidEdit}></EditPost>)}></Route>
+          <Route path="/posts" element={(<Posts gotoNewPost={gotoNewPost} gotoPost={gotoPost}/>)}></Route>
+          <Route path="/new" element={(<AddPost postDidSave={postDidSave} gotoPosts={gotoPosts}/>)}></Route>
+          <Route path="/posts/:id" element={(<Post postDidDelete={postDidDelete} gotoEdit={gotoEdit}/>)}></Route>
+          <Route path="/posts/:id/edit" element={(<EditPost postDidEdit={postDidEdit} gotoPosts={gotoPosts}/>)}></Route>
       </Routes>
     )
 }

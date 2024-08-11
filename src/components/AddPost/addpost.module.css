@@ -1,0 +1,31 @@
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.text {
+    min-width: 200px;
+    min-height: 150px;
+    margin-left: 10px;
+}
+
+.label {
+    vertical-align: top;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.cancel {
+    text-decoration: none;
+}

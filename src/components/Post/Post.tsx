@@ -38,7 +38,7 @@ export const Post = (props: PostProps) => {
                 alert(e.message);
             })
     }
-    const onModifyClick = (e: MouseEvent) => {
+    const onEditClick = (e: MouseEvent) => {
         e.preventDefault();
         gotoEdit(id);
     }
@@ -50,7 +50,7 @@ export const Post = (props: PostProps) => {
                     <span>{state.details?.text}</span>
                 </div>
                 <div className={styles["footer"]}>
-                    <input type="button" className={styles["button-modify"]} value="Изменить" onClick={onModifyClick}/>
+                    <input type="button" className={styles["button-edit"]} value="Изменить" onClick={onEditClick}/>
                     <input type="button" className={styles["button-remove"]} value="Удалить" onClick={onRemoveClick}/>
                 </div>
             </div>
