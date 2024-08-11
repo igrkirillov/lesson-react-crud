@@ -1,5 +1,4 @@
 // @flow
-import * as React from 'react';
 import {FormEvent, useEffect, useState} from 'react';
 import styles from "./editpost.module.css"
 import {editPost, getDetails, PostDtoDetails, retrieveIdFromParams} from "../../serverApi";
@@ -56,7 +55,7 @@ export const EditPost = (props: EditPostProps) => {
                     <label htmlFor="addPost" className={styles["label"]}>
                         <img src="https://i.pravatar.cc/300" alt="avatar" className={styles["avatar"]}/>
                     </label>
-                    <textarea id="addPost" className={styles["text"]} required={true}>{state.details?.text}</textarea>
+                    <textarea id="addPost" className={styles["text"]} required={true} defaultValue={state.details?.text}></textarea>
                 </div>
                 <div className={styles["footer"]}>
                     <input type="submit" className={styles["submit"]} value="Сохранить"/>

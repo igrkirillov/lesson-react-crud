@@ -1,3 +1,7 @@
 .button-remove {
     margin-left: 10px;
 }
+
+.content pre {
+    text-align: left;
+}

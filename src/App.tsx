@@ -19,7 +19,7 @@ function App() {
     const gotoEdit = (id: number) => {
         navigate(`/posts/${id}/edit`)
     }
-    const postDidDelete = (id: number) => {
+    const postDidDelete = () => {
         navigate("/posts")
     }
     const postDidEdit = (id: number) => {

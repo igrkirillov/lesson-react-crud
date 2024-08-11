@@ -1,5 +1,4 @@
 // @flow 
-import * as React from 'react';
 import {getPosts, PostDto} from "../../serverApi";
 import styles from "./posts.module.css";
 import {useEffect, useState, MouseEvent} from "react";
@@ -22,14 +21,17 @@ export const Posts = (props: PostsProps) => {
                 alert(e.message);
                 setState({...state, loading: false, dtoList: []})
             })
-    }, [])
+    }, []);
     return (
         <div className={styles["posts-container"]}>
-            <div>Посты:</div>
+            <div className={styles["header"]}>
+                <input type="button" className={styles["new-button"]} value="Создать пост" onClick={gotoNewPost}/>
+            </div>
+            <div><h2>Посты</h2></div>
             {state.loading
                 ? <span>Загружаются...</span>
                 : state.dtoList.length != 0
-                    ? state.dtoList.map(dto => (<Card dto={dto} postDidClick={gotoPost}></Card>))
+                    ? (<div className={styles["posts-container"]}>{state.dtoList.map(dto => (<Card key={dto.id} dto={dto} postDidClick={gotoPost}></Card>))}</div>)
                     : (<><span>0 постов</span> <a href="#" onClick={gotoNewPost}>Добавить</a></>)}
         </div>
     );
@@ -51,7 +53,7 @@ function Card(props: CardProps) {
 
             </div>
             <div className={styles["post-content"]}>
-                <span>{dto.text}</span>
+                <pre>{dto.text}</pre>
             </div>
             <div className={styles["post-footer"]}>
 

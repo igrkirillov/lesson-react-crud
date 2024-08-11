@@ -1,10 +1,8 @@
 // @flow
-import * as React from 'react';
 import styles from "./post.module.css"
 import {deletePost, getDetails, PostDtoDetails, retrieveIdFromParams} from "../../serverApi";
 import {useEffect, useState, MouseEvent} from "react";
 import {useParams} from "react-router";
-import {Params} from "react-router-dom";
 
 type PostProps = {
     gotoEdit: (id: number) => void,
@@ -47,7 +45,7 @@ export const Post = (props: PostProps) => {
         : (
             <div className={styles["container"]}>
                 <div className={styles["content"]}>
-                    <span>{state.details?.text}</span>
+                    <pre>{state.details?.text}</pre>
                 </div>
                 <div className={styles["footer"]}>
                     <input type="button" className={styles["button-edit"]} value="Изменить" onClick={onEditClick}/>

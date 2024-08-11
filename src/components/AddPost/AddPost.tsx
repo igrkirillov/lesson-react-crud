@@ -1,5 +1,4 @@
 // @flow
-import * as React from 'react';
 import {FormEvent, useEffect, useRef, useState} from 'react';
 import styles from "./addpost.module.css"
 import {savePost} from "../../serverApi";
